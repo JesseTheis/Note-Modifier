@@ -1,3 +1,7 @@
+// import express from 'express';
+// import path from 'path';
+// import fs from 'fs';
+
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -21,7 +25,7 @@ app.get('/notes', (req, res) =>
     );
 
 
-app.get('/api/notes', (req, res) =>
+app.get('/api/notes', (_, res) =>
     fs.readFile(path.join(__dirname, '/db/db.json'), 'utf8', (err, data) => {
         if (err) {
             console.error(err);
